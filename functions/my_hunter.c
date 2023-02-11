@@ -44,10 +44,10 @@ void close_window(sfRenderWindow *my_hunter, sfEvent event, killer *win)
 void window_sprite(killer *win)
 {
     win->my_hunter = create_window(1250, 650, 32, "my_hunter");
-    win->my_texture = sfTexture_createFromFile("girl-anime-landscape-anime.jpg", NULL);
+    win->my_texture = sfTexture_createFromFile("fond.jpg", NULL);
     win->my_sprite = sfSprite_create();
     sfSprite_setTexture(win->my_sprite, win->my_texture, sfTrue);
-    win->st = sfTexture_createFromFile("start-hi.png", NULL);
+    win->st = sfTexture_createFromFile("star.jpg", NULL);
     win->sp = sfSprite_create();
     sfSprite_setTexture(win->sp, win->st, sfTrue);
     /*   win->scale.x = 1.57; win->scale.y = 1.32; win->scale2.x = 0.4;

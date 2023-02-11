@@ -1,46 +1,44 @@
 /*
-** EPITECH PROJECT, 2022
-** my_printflib
+** EPITECH PROJECT, 2023
+** my
 ** File description:
-** my_printflib
+** my.h
 */
 
-#include <SFML/Window/Event.h>
-#include <stddef.h>
-#include "myprintflib.h"
-#include <SFML/Graphics.h>
-#include <SFML/System.h>
-#include <SFML/System/Export.h>
-#include <SFML/System/Time.h>
-#include <SFML/System/Types.h>
-#include <SFML/Audio/Music.h>
-#include <SFML/Audio/Music.h>
-#include <SFML/Audio/Sound.h>
+#ifndef MY_H
+    #define MY_H
+    #include <SFML/Graphics/RenderWindow.h>
+    #include <unistd.h>
+    #include <SFML/Graphics.h>
+    #include <stdlib.h>
+    #include <stdio.h>
 
-#ifndef ELEMENTS_H
-    #define ELEMENTS_H
-typedef struct hunter{
-    sfRenderWindow *my_hunter;
+struct skala {
+    sfRenderWindow *window;
+    sfVideoMode video;
     sfEvent event;
-    sfIntRect rect;
-    sfVector2f pos;
-    sfMusic *my_music;
-    sfMouseButtonEvent mousevent;
-    sfTexture *my_texture;
-    sfVector2i bird_posi;
-    sfSprite *my_sprite;
-    sfTexture *st;
-    sfSprite *sp;
-    sfMusic *kill_sound;
-    int x;
-    int y;
-    sfVector2f scale;
-    sfVector2f scale2;
-}killer;
-void window_sprite(killer *win);
-void window_destroy(killer *destroy);
-void close_window(sfRenderWindow *my_hunter, sfEvent event, killer *win);
-void window_sprite(killer *win);
-void manage_mouse_click(sfMouseButtonEvent event, killer *win);
-//void manage_mouse_click(sfMouseButtonEvent event, killer *win);*/
+    sfTexture* texture;
+    sfSprite* sprite;
+    sfTexture* t_off;
+    sfSprite* s_off;
+    sfTexture* t_start;
+    sfSprite* s_start;
+    sfTexture* t_fond1;
+    sfSprite* s_fond1;
+    sfTexture* t_fond2;
+    sfSprite* s_fond2;
+    sfTexture* t_vie;
+    sfSprite* s_vie;
+    sfTexture* t_agent;
+    sfSprite* s_agent;
+};
+
+typedef struct skala skala;
+
+void sprite_texture(skala *mi);
+
+void draw(skala *mi);
+
+void destroy(skala *mi);
+
 #endif

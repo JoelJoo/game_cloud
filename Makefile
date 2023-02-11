@@ -1,34 +1,25 @@
 ##
 ## EPITECH PROJECT, 2022
-## my_printf_Makefile
+## Makefile
 ## File description:
-## my_printf_Makefile
+## 101pong
 ##
 
-SRC	=	my_putstr.c	\
-		my_putchar.c	\
-		my_putnbr.c	\
-		manage_mouse.c	\
-		my_printf.c	\
-		close_window.c	\
-		move_rect.c	\
-		window_destroy.c	\
-		file.c	\
-		f2.c	\
-		my_hunter.c
+SRC 	=	$(wildcard *.c)
 
-OBJ	=	$(SRC:.c=.o)
-CC	= gcc
+NAME 	=	skala
 
-NAME	= 	my_hunter
+all: $(NAME)
 
-all: 	$(NAME)
+$(NAME):
+	gcc $(SRC) -o $(NAME) -lcsfml-graphics -lcsfml-window	\
+	-lcsfml-audio -lcsfml-system
 
-$(NAME)	:		$(OBJ)
-	 $(CC) $(OBJ)  -o $(NAME) -lcsfml-graphics
 clean:
-	rm -f $(OBJ)
-fclean:	clean
+	rm -f *#
+	rm -f *~
+
+fclean: clean
 	rm -f $(NAME)
-	clear
+
 re:	fclean all
